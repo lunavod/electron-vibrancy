@@ -1,39 +1,42 @@
 {
   "name": "electron-vibrancy",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Enable blurring the back of your transparent BrowserWindow using this simple module.",
   "main": "index.js",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "coffee-script": "^1.12.6",
-    "coffeelint": "^1.16.0",
-    "electron": "^1.6.8",
-    "mocha": "^3.4.1",
+    "coffeelint": "^1.4.1",
+    "coffeescript": "^2.5.1",
+    "electron": "^11.0.0",
+    "electron-rebuild": "^2.3.4",
+    "mocha": "^8.2.1",
     "node-gyp": "^3.6.1",
     "node-pre-gyp": "^0.6.34",
-    "spectron": "^3.6.4"
+    "spectron": "^13.0.0"
   },
   "dependencies": {
     "bindings": "^1.2.1",
     "nan": "^2.6.2"
   },
   "scripts": {
-    "test-spectron": "mocha --compilers coffee:coffee-script/register ./spec/vibrancy-spec.coffee",
+    "test-spectron": "mocha --require coffeescript/register ./spec/vibrancy-spec.coffee",
     "test-module": "mocha --compilers coffee:coffee-script/register ./spec/module-spec.coffee",
     "run-test-app": "./node_modules/.bin/electron ./spec/app",
     "lint-cpp": "python scripts/lint.py",
     "lint-coffee": "coffeelint spec",
-    "rebuild": "node-gyp rebuild --target=1.6.8 --runtime=electron --arch=x64 --debug --dist-url=https://atom.io/download/atom-shell",
-    "build": "node-gyp build --target=1.6.8 --runtime=electron --arch=x64 --debug --dist-url=https://atom.io/download/atom-shell",
-    "nrebuild": "node-gyp rebuild --debug --arch=x64 --verbose",
+    "rebuild": "node-gyp rebuild",
+    "build": "node-gyp build",
+    "nrebuild": "node-gyp rebuild --debug --verbose",
     "nbuild": "node-gyp build --debug",
     "conf": "node-gyp configure --arch=x64",
-    "postinstall": "npm run rebuild"
+    "_postinstall": "npm run rebuild",
+    "install": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arkenthera/electron-vibrancy.git"
+    "url": "git+https://github.com/lunavod/electron-vibrancy.git"
   },
   "keywords": [
     "electron",
@@ -47,7 +50,7 @@
   "license": "MIT",
   "gypfile": true,
   "bugs": {
-    "url": "https://github.com/arkenthera/electron-vibrancy/issues"
+    "url": "git+https://github.com/lunavod/electron-vibrancy/issues"
   },
-  "homepage": "https://github.com/arkenthera/electron-vibrancy#readme"
+  "homepage": "git+https://github.com/lunavod/electron-vibrancy#readme"
 }

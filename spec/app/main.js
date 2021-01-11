@@ -57,3 +57,8 @@ app.on('ready', function () {
     //electronVibrancy.DisableVibrancy(mainWindow);
   })
 })
+
+app.on('before-quit', () => {
+  alert("CLOSE")
+  mainWindow.close();
+});

@@ -5,17 +5,17 @@
             "sources": [
                 "src/Common.h",
                 "src/Vibrancy.h",
-                "src/Vibrancy.cc",
+                "src/Vibrancy.mm",
                 "src/VibrancyHelper.h",
                 "src/vibrancy_win.cc",
-                "src/vibrancy_mac.cc",
+                "src/vibrancy_mac.mm",
                 "src/vibrancy_linux.cc",
-                "src/Init.cc",
+                "src/Init.mm",
             ],
             'conditions':[
                 ['OS!="mac"', {
                     "sources!": [
-                        "src/vibrancy_mac.cc"
+                        "src/vibrancy_mac.mm"
                     ]
                 }],
                 ['OS!="win"', {

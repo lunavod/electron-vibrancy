@@ -62,7 +62,4 @@ module.exports = class Setup
         console.log v.message
 
   stopApplication:(app) ->
-    if (!app || !app.isRunning())
-      return
-
-    app.stop()
+    app.client.quit()
