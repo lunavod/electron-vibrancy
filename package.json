@@ -30,9 +30,7 @@
     "build": "node-gyp build",
     "nrebuild": "node-gyp rebuild --debug --verbose",
     "nbuild": "node-gyp build --debug",
-    "conf": "node-gyp configure --arch=x64",
-    "_postinstall": "npm run rebuild",
-    "install": "npm run build"
+    "conf": "node-gyp configure --arch=x64"
   },
   "repository": {
     "type": "git",
